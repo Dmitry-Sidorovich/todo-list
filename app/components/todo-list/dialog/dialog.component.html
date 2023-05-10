@@ -1,0 +1,29 @@
+<h2>EDIT</h2>
+<mat-dialog-content>
+
+  <form [formGroup]="dialogForm">
+
+    <div>
+      <div class="form-group">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" class="todo-input form-control">
+      </div>
+
+      <div class="form-group">
+        <mat-label>Text</mat-label>
+        <textarea matInput formControlName="text" class="todo-input form-control"></textarea>
+      </div>
+    </div>
+
+    <button mat-dialog-close mat-raised-button color="warn" class="m-lg-2"
+            (click)="onNoClick()">Cancel
+    </button>
+
+    <button mat-raised-button color="primary"
+            [disabled]="dialogForm.invalid"
+            (click)="editTodo()">Save
+    </button>
+
+  </form>
+
+</mat-dialog-content>
